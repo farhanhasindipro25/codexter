@@ -13,7 +13,7 @@ const Topic = ({ topic }) => {
           <h2 className="card-title">{name}</h2>
           <p>Total Questions: {total}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-accent">
+            <button className="btn btn-primary">
               START QUIZ
               <ArrowSmallRightIcon className="h-5 w-5 text-white pl-1" />
             </button>

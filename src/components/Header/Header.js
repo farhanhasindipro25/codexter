@@ -19,7 +19,7 @@ const Header = () => {
               assess your skill level. See your marks represented graphically,
               and also read blogs on various programming topics.
             </p>
-            <button className="btn btn-accent ml-6">Get Started</button>
+            <button className="btn btn-primary ml-6">Get Started</button>
           </div>
         </div>
       </div>

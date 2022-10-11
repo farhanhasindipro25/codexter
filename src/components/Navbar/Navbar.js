@@ -6,21 +6,29 @@ const Navbar = () => {
     <div className="bg-slate-800">
       <div className="navbar container mx-auto">
         <div className="flex-1">
-          <NavLink to="/topics"
-          className="btn btn-ghost normal-case font-bold text-xl">
-          CODEXTER
+          <NavLink
+            to="/topics"
+            className="btn btn-ghost normal-case font-bold text-xl"
+          >
+            CODEXTER
           </NavLink>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <a>Quiz Topics</a>
+              <NavLink to="/topics" className="normal-case">
+                Topics
+              </NavLink>
             </li>
             <li>
-              <a>Performance Statistics</a>
+              <NavLink to="/stats" className="normal-case">
+                Statistics
+              </NavLink>
             </li>
             <li>
-              <a>Blog</a>
+              <NavLink to="/blogs" className="normal-case">
+                Blog
+              </NavLink>
             </li>
           </ul>
         </div>
