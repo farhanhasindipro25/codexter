@@ -9,32 +9,33 @@ import Main from "./layout/Main";
 function App() {
   const router = createBrowserRouter([
     {
-      path:'/',
+      path: "/",
       element: <Main></Main>,
       children: [
         {
-          path: '/topics', 
-          element: <Topics></Topics>
+          path: "/topics",
+          element: <Topics></Topics>,
         },
         {
-          path: '/stats',
-          element: <Stats></Stats>
+          path: "/stats",
+          element: <Stats></Stats>,
         },
         {
-          path: '/blogs',
-          element: <Blog></Blog>
-        }
+          path: "/blogs",
+          element: <Blog></Blog>,
+        },
       ],
     },
     {
       path: "*",
-      element: <NotFound404
-      ></NotFound404>,
+      element: <NotFound404></NotFound404>,
     },
   ]);
-  return <div className="App">
-    <RouterProvider router={router}></RouterProvider>
-  </div>;
+  return (
+    <div className="bg-slate-900">
+      <RouterProvider router={router}></RouterProvider>
+    </div>
+  );
 }
 
 export default App;
