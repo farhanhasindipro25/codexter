@@ -3,18 +3,16 @@ import { EyeIcon } from "@heroicons/react/24/solid";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const QuestionDetails = ({ questionItem }) => {
+const QuestionDetails = ({ questionItem, setCorrectAnswer }) => {
   const { question, correctAnswer, options } = questionItem;
 
   const [selectedOption, setSelectedOption] = useState("");
 
-  // const [isCorrect, setIsCorrect] = useState(false);
+  const showCorrectAnswer = () => {
+    setCorrectAnswer(correctAnswer);
+  };
 
   const isSelected = (value) => selectedOption === value;
-
-  // const showCorrectAnswer = () => {
-  //   alert("Correct Answer:", correctAnswer);
-  // };
 
   const handleOptionClick = (e) => {
     setSelectedOption(e.target.value);
@@ -47,29 +45,17 @@ const QuestionDetails = ({ questionItem }) => {
     <div className="mt-10 bg-slate-800 p-10 rounded-3xl">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-lg font-bold text-slate-400">{question}</h1>
-        <button>
-          <label htmlFor="my-modal" className="modal-button">
-            <EyeIcon className="h-6 w-6 text-slate-400 pl-1" />
+
+        <button
+          onClick={showCorrectAnswer}
+          className="hover:cursor-pointer focus:cursor-pointer cursor-pointer btn"
+        >
+          <label htmlFor="my-modal-3">
+            <EyeIcon className="h-6 w-6 text-slate-400 text-center" />
           </label>
         </button>
-
-        <input type="checkbox" id="my-modal" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">
-              The correct answer is: {correctAnswer}
-            </h3>
-
-            <div className="modal-action">
-              <button>
-                <label htmlFor="my-modal" className="btn">
-                  Close
-                </label>
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
+
       <div
         className="bg-slate-700 my-4 p-4 rounded-lg flex items-center"
         id="option-item-1"

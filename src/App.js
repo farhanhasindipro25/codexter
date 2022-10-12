@@ -22,6 +22,9 @@ function App() {
         },
         {
           path: "/stats",
+          loader: async () => {
+            return fetch("https://openapi.programming-hero.com/api/quiz");
+          },
           element: <Stats></Stats>,
         },
         {
@@ -29,16 +32,18 @@ function App() {
           element: <Blog></Blog>,
         },
         {
-          path: 'topics/:topicId',
-          loader: async ({params})=>{
-            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`);
+          path: "topics/:topicId",
+          loader: async ({ params }) => {
+            return fetch(
+              `https://openapi.programming-hero.com/api/quiz/${params.topicId}`
+            );
           },
-          element: <Questions></Questions>
+          element: <Questions></Questions>,
         },
       ],
     },
     {
-      path: "*",
+      path: "/*",
       element: <NotFound404></NotFound404>,
     },
   ]);

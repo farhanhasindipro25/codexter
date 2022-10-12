@@ -1,10 +1,15 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import Stat from "../Stat/Stat";
 
-const Stats = ({ topic }) => {
-  const { total } = topic;
+const Stats = () => {
+  const stats = useLoaderData();
+  console.log(stats);
   return (
     <div>
-      <h2>Stats component: {total}</h2>
+      {stats.map((stat) => (
+        <Stat key={stats.id} stat={stat}></Stat>
+      ))}
     </div>
   );
 };
