@@ -45,7 +45,7 @@ const Questions = () => {
           <h1 className="bg-red-600 w-44 py-3 rounded-xl text-xl font-bold text-center text-white">
             Incorrect: {incorrectCount}
           </h1>
-          <h1 className="bg-slate-800 w-44 py-3 rounded-xl text-xl font-bold text-center text-indigo-500">
+          <h1 className="bg-slate-800 w-56 py-3 rounded-xl text-xl font-bold text-center text-indigo-500">
             Marks: {totalMarks} %
           </h1>
         </div>

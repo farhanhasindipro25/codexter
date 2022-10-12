@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Blog from "./components/Blog/Blog";
+import Blogs from "./components/Blogs/Blogs";
 import NotFound404 from "./components/NotFound404/NotFound404";
 import Questions from "./components/Questions/Questions";
 import Stats from "./components/Stats/Stats";
@@ -29,7 +29,7 @@ function App() {
         },
         {
           path: "/blogs",
-          element: <Blog></Blog>,
+          element: <Blogs></Blogs>,
         },
         {
           path: "topics/:topicId",

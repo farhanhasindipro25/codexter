@@ -1,14 +1,15 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import Stat from "../Stat/Stat";
+import TotalQuestionsChart from "../TotalQuestionsChart/TotalQuestionsChart";
 
 const Stats = () => {
   const stats = useLoaderData();
   console.log(stats);
+
   return (
     <div>
-      {stats.map((stat) => (
-        <Stat key={stats.id} stat={stat}></Stat>
+      {stats.data.map((item) => (
+        <TotalQuestionsChart key={item.id} item={item}></TotalQuestionsChart>
       ))}
     </div>
   );
