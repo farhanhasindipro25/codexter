@@ -3,7 +3,14 @@ import { EyeIcon } from "@heroicons/react/24/solid";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const QuestionDetails = ({ questionItem, setCorrectAnswer }) => {
+const QuestionDetails = ({
+  questionItem,
+  setCorrectAnswer,
+  setCorrectCount,
+  setIncorrectCount,
+  correctCount,
+  incorrectCount,
+}) => {
   const { question, correctAnswer, options } = questionItem;
 
   const [selectedOption, setSelectedOption] = useState("");
@@ -27,6 +34,8 @@ const QuestionDetails = ({ questionItem, setCorrectAnswer }) => {
         progress: undefined,
         theme: "dark",
       });
+      setCorrectCount(correctCount + 1);
+      // console.log(correctCount);
     } else {
       toast.error("Oops, that's incorrect. Please try again!", {
         position: "bottom-right",
@@ -38,6 +47,7 @@ const QuestionDetails = ({ questionItem, setCorrectAnswer }) => {
         progress: undefined,
         theme: "dark",
       });
+      setIncorrectCount(incorrectCount + 1);
     }
   };
 

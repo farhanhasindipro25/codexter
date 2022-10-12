@@ -4,9 +4,14 @@ import QuestionDetails from "../QuestionDetails/QuestionDetails";
 
 const Questions = () => {
   const [correctAnswer, setCorrectAnswer] = useState("");
+  const [correctCount, setCorrectCount] = useState(0);
+  const [incorrectCount, setIncorrectCount] = useState(0);
 
   const questions = useLoaderData();
   console.log(questions);
+
+  const totalQuestions = questions.data.total;
+  const totalMarks = ((correctCount / totalQuestions) * 100).toFixed(2);
 
   return (
     <div>
@@ -35,13 +40,13 @@ const Questions = () => {
         </div>
         <div className="flex items-center justify-start gap-5">
           <h1 className="bg-green-500 w-44 py-3 rounded-xl text-xl font-bold text-center text-slate-900">
-            Correct: {}
+            Correct: {correctCount}
           </h1>
           <h1 className="bg-red-600 w-44 py-3 rounded-xl text-xl font-bold text-center text-white">
-            Incorrect: {}
+            Incorrect: {incorrectCount}
           </h1>
           <h1 className="bg-slate-800 w-44 py-3 rounded-xl text-xl font-bold text-center text-indigo-500">
-            Marks: {}
+            Marks: {totalMarks} %
           </h1>
         </div>
       </div>
@@ -57,6 +62,10 @@ const Questions = () => {
             key={questionItem.id}
             questionItem={questionItem}
             setCorrectAnswer={setCorrectAnswer}
+            setCorrectCount={setCorrectCount}
+            setIncorrectCount={setIncorrectCount}
+            correctCount={correctCount}
+            incorrectCount={incorrectCount}
           ></QuestionDetails>
         ))}
       </div>
