@@ -43,7 +43,7 @@ const Questions = () => {
           </h1>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto pb-10">
         {questions.data.questions.map((questionItem) => (
           <QuestionDetails
             key={questionItem.id}
