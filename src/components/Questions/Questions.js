@@ -16,9 +16,11 @@ const Questions = () => {
   return (
     <div>
       <div className="container mx-auto bg-slate-900 mt-20">
-        <div className="mb-16">
-          <h1 className="font-bold text-white mb-5">Instructions:</h1>
-          <ul className="list-disc text-slate-200 ml-5 text-sm">
+        <div className="mb-16 container mx-auto">
+          <h1 className="font-bold text-white mb-5 lg:ml-0 md:ml-20 sm:ml-7 ml-7">
+            Instructions:
+          </h1>
+          <ul className="list-disc text-slate-200 lg:ml-5 text-sm lg:w-full md:w-9/12 md:container md:mx-auto sm:w-4/5 w-4/5 sm:ml-10 ml-10">
             <li>
               If you select the correct answer, the option box will turn green.
               If you select an incorrect answer, the option box will turn red.
@@ -38,7 +40,7 @@ const Questions = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center justify-start gap-5">
+        <div className="flex lg:flex-row md:flex-row sm:flex-col flex-col items-center lg:justify-start md:justify-center sm:justify-center justify-center gap-5">
           <h1 className="bg-green-500 w-44 py-3 rounded-xl text-xl font-bold text-center text-slate-900">
             Correct: {correctCount}
           </h1>
@@ -52,7 +54,7 @@ const Questions = () => {
       </div>
       <div className="container mx-auto pb-10">
         <h1 className="text-2xl mt-10 font-semibold">
-          <span className="text-indigo-500 font-bold">
+          <span className="text-indigo-500 font-bold md:ml-10 sm:ml-8 ml-8">
             {questions.data.name}
           </span>{" "}
           Quiz

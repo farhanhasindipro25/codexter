@@ -12,9 +12,9 @@ const Topic = ({ topic }) => {
 
   return (
     <div>
-      <div className="card w-96 bg-slate-800 shadow-xl">
+      <div className="card lg:w-96 md:w-80 sm:w-80 w-80 bg-slate-800 shadow-xl container mx-auto">
         <figure>
-          <img src={logo} className="bg-slate-700" alt="Shoes" />
+          <img src={logo} className="bg-slate-700" alt="logo" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>

@@ -7,10 +7,10 @@ const Blogs = () => {
   return (
     <div>
       <div className="container mx-auto mt-20 bg-slate-900 pb-96">
-        <h2 className="text-2xl font-bold text-center text-white mt-56 mb-20">
+        <h2 className="lg:text-2xl md:text-2xl sm:text-lg text-lg font-bold text-center text-white mt-56 mb-20">
           READ BLOGS ON INTERESTING PROGRAMMING TOPICS
         </h2>
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-10">
           <Blog1></Blog1>
           <Blog2></Blog2>
           <Blog3></Blog3>

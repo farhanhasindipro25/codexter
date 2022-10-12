@@ -3,7 +3,7 @@ import React from "react";
 const Blog2 = () => {
   return (
     <div className="mx-auto">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card lg:w-96 md:w-80 sm:w-80 w-80 bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/777655/react-context-api-4929b3703a1a7082d99b53eb1bbfc31f.png"

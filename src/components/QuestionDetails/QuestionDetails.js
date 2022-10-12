@@ -52,7 +52,7 @@ const QuestionDetails = ({
   };
 
   return (
-    <div className="mt-10 bg-slate-800 p-10 rounded-3xl">
+    <div className="mt-10 bg-slate-800 p-10 rounded-3xl lg:w-full md:w-11/12 sm:w-80 w-80 container mx-auto">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-lg font-bold text-slate-400">{question}</h1>
 

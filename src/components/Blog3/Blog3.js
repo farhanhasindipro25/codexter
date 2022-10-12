@@ -3,7 +3,7 @@ import React from "react";
 const Blog3 = () => {
   return (
     <div className="mx-auto">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card lg:w-96 md:w-80 sm:w-80 w-80 bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FqQ54hMt-NGYLeORAnfkXS4Cx2DFnUjQ5A&usqp=CAU"
