@@ -1,23 +1,79 @@
 import React, { useState } from "react";
 import { EyeIcon } from "@heroicons/react/24/solid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const QuestionDetails = ({ questionItem }) => {
   const { question, correctAnswer, options } = questionItem;
 
   const [selectedOption, setSelectedOption] = useState("");
+
+  // const [isCorrect, setIsCorrect] = useState(false);
+
   const isSelected = (value) => selectedOption === value;
 
-  const handleOptionClick = (e) => setSelectedOption(e.target.value);
+  // const showCorrectAnswer = () => {
+  //   alert("Correct Answer:", correctAnswer);
+  // };
 
-  // console.log(e.target.value);
+  const handleOptionClick = (e) => {
+    setSelectedOption(e.target.value);
+    if (e.target.value === correctAnswer) {
+      toast.success("Yepp, that's is correct", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      toast.error("Oops, that's incorrect. Please try again!", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  };
 
   return (
     <div className="mt-10 bg-slate-800 p-10 rounded-3xl">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-lg font-bold text-slate-400">{question}</h1>
-        <EyeIcon className="h-6 w-6 text-slate-400 pl-1" />
+        <button>
+          <label htmlFor="my-modal" className="modal-button">
+            <EyeIcon className="h-6 w-6 text-slate-400 pl-1" />
+          </label>
+        </button>
+
+        <input type="checkbox" id="my-modal" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">
+              The correct answer is: {correctAnswer}
+            </h3>
+
+            <div className="modal-action">
+              <button>
+                <label htmlFor="my-modal" className="btn">
+                  Close
+                </label>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="bg-slate-700 my-4 p-4 rounded-lg flex items-center">
+      <div
+        className="bg-slate-700 my-4 p-4 rounded-lg flex items-center"
+        id="option-item-1"
+      >
         <input
           type="radio"
           name={options[0]}
@@ -30,7 +86,10 @@ const QuestionDetails = ({ questionItem }) => {
           {options[0]}
         </label>
       </div>
-      <div className="bg-slate-700 my-4 p-4 rounded-lg flex items-center">
+      <div
+        className="bg-slate-700 my-4 p-4 rounded-lg flex items-center"
+        id="option-item"
+      >
         <input
           type="radio"
           name={options[1]}
@@ -43,7 +102,10 @@ const QuestionDetails = ({ questionItem }) => {
           {options[1]}
         </label>
       </div>
-      <div className="bg-slate-700 my-4 p-4 rounded-lg flex items-center">
+      <div
+        className="bg-slate-700 my-4 p-4 rounded-lg flex items-center"
+        id="option-item"
+      >
         <input
           type="radio"
           name={options[2]}
@@ -56,7 +118,10 @@ const QuestionDetails = ({ questionItem }) => {
           {options[2]}
         </label>
       </div>
-      <div className="bg-slate-700 my-4 p-4 rounded-lg flex items-center">
+      <div
+        className="bg-slate-700 my-4 p-4 rounded-lg flex items-center"
+        id="option-item"
+      >
         <input
           type="radio"
           name={options[3]}
@@ -69,6 +134,7 @@ const QuestionDetails = ({ questionItem }) => {
           {options[3]}
         </label>
       </div>
+      <ToastContainer />
     </div>
   );
 };
